@@ -3,9 +3,9 @@ let db = require('../models')
 let Student = db.Student
 
 let router = express.Router()
-
+// sorts by starID
 router.get('/students', function(req, res, next){
-    Student.findAll({order: ['name']}).then( students => {
+    Student.findAll({order: ['starID']}).then( students => {
         return res.json(students)
     }).catch(err => next(err) )
 })
